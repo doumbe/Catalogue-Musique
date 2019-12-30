@@ -26,10 +26,12 @@ export class AlbumsComponent implements OnInit {
     var categoryAxis = this.graph.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = "name";
     this.graph.yAxes.push(new am4charts.ValueAxis());
-    var series = this.graph.series.push(new am4charts.ColumnSeries());
+    var series = this.graph.series.push(new am4charts.ColumnSeries3D());
     series.dataFields.valueY = "sum";
     series.dataFields.categoryX = "name";
     series.name = "Sum";
     series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+    series.columns.template.fill = am4core.color("#007f00");
+    series.columns.template.opacity=0.7;
   }
 }
